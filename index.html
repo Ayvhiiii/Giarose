@@ -4,36 +4,69 @@
   <meta charset="UTF-8">
   <title>Congratulations Mikaela!</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
       margin: 0;
       padding: 0;
-      background: url('4447a028-5d09-45de-9336-51ea3c2d688f.jpeg') no-repeat center center fixed;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background-size: cover;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      backdrop-filter: blur(5px);
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: opacity 1s ease-in-out;
+      z-index: -2;
+    }
+
+    .background.fade {
+      opacity: 0;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: -1;
     }
 
     .card {
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(255, 255, 255, 0.95);
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
       max-width: 600px;
       padding: 40px;
       text-align: center;
+      margin: auto;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: fadeIn 2s ease;
+      z-index: 1;
     }
 
-    .photo-placeholder {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 5px solid #00796b;
-      margin-bottom: 20px;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     h1 {
@@ -55,8 +88,9 @@
 
     .footer {
       margin-top: 30px;
-      font-size: 0.9em;
-      color: #555;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 1.3em;
+      color: #4e342e;
     }
 
     .confetti {
@@ -65,22 +99,67 @@
   </style>
 </head>
 <body>
-  <div class="card">
 
+  
+  <div id="bg1" class="background"></div>
+  <div id="bg2" class="background fade"></div>
+  <div class="overlay"></div>
+
+  
+  <div class="card">
     <div class="confetti">🎉🎓🌟</div>
     <h1>Congratulations</h1>
     <h2>Mikaela Giarose Jimenez</h2>
     <p>
-      Your graduation from the <strong>Pioneers Service School</strong> marks the beginning of a beautiful journey in sacred service. <br><br>
+      Your graduation from <strong>Pioneers Service School</strong> marks the beginning of a beautiful journey in sacred service. <br><br>
       May Jehovah continue to bless your faithful efforts and guide your steps as you wholeheartedly serve Him.
-	  <br>
-	 As a personal message, Keep being kind and stay courageous!
+      <br><br>
+      As a personal message, keep being kind and stay courageous!
     </p>
     <div class="confetti">🌸💐🙌</div>
     <div class="footer">
-      With love and warmest congratulations!<br>
-      — From Jeremy. Your Secret Admirer
+      With love and warmest congratulations,<br>
+      — From Jeremy, your secret admirer 💌
     </div>
   </div>
+
+  <script>
+    const images = [
+      '4447a028-5d09-45de-9336-51ea3c2d688f.jpeg',
+      '6625b2bd-3f9e-440e-9156-f9f092ebf447.jpeg',
+      'c836ceb6-bfe5-44e1-a95e-702cd8c50ac8.jpeg'
+	  'e0747466-0650-4257-8a97-8d22886e3887.jpeg'
+	  'eae14912-b3d6-4be4-86ab-4a6c00f79000.jpeg'
+	  'f9ccd05d-88ea-4a25-ae10-318e025409c1.jpeg'
+	  'fbcd3d7b-3031-4b63-9cbd-9913c6802753.jpeg'
+    ];
+
+    let current = 0;
+    const bg1 = document.getElementById('bg1');
+    const bg2 = document.getElementById('bg2');
+
+    
+    bg1.style.backgroundImage = `url('${images[0]}')`;
+    bg2.style.backgroundImage = `url('${images[1]}')`;
+
+    function fadeBackground() {
+      
+      if (bg1.classList.contains('fade')) {
+        bg1.style.backgroundImage = `url('${images[current]}')`;
+        bg1.classList.remove('fade');
+        bg2.classList.add('fade');
+      } else {
+        bg2.style.backgroundImage = `url('${images[current]}')`;
+        bg2.classList.remove('fade');
+        bg1.classList.add('fade');
+      }
+
+      current = (current + 1) % images.length;
+    }
+
+    
+    setInterval(fadeBackground, 5000);
+  </script>
+
 </body>
 </html>
