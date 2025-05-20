@@ -8,13 +8,20 @@
       box-sizing: border-box;
     }
 
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      height: 100%;
-      overflow: hidden;
-    }
+   body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: no-repeat center center fixed;
+  background-size: cover;
+  transition: background-image 1s ease-in-out;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
 
     .background {
       position: fixed;
@@ -43,20 +50,20 @@
       z-index: -1;
     }
 
-    .card {
-      background-color: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      max-width: 600px;
-      padding: 40px;
-      text-align: center;
-      margin: auto;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      animation: fadeIn 2s ease;
-      z-index: 1;
-    }
+  .card {
+  background-color: rgba(255, 255, 255, 0.65); /* Semi-transparent */
+  backdrop-filter: blur(8px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  padding: 40px;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  animation: fadeIn 2s ease;
+}
+
 
     @keyframes fadeIn {
       from {
@@ -126,12 +133,10 @@
   <script>
     const images = [
       '4447a028-5d09-45de-9336-51ea3c2d688f.jpeg',
-      '6625b2bd-3f9e-440e-9156-f9f092ebf447.jpeg',
-      'c836ceb6-bfe5-44e1-a95e-702cd8c50ac8.jpeg'
-	  'e0747466-0650-4257-8a97-8d22886e3887.jpeg'
-	  'eae14912-b3d6-4be4-86ab-4a6c00f79000.jpeg'
-	  'f9ccd05d-88ea-4a25-ae10-318e025409c1.jpeg'
-	  'fbcd3d7b-3031-4b63-9cbd-9913c6802753.jpeg'
+	  'e0747466-0650-4257-8a97-8d22886e3887.jpeg',
+	  'f9ccd05d-88ea-4a25-ae10-318e025409c1.jpeg',
+	  '2b65babf-733a-4393-80c1-6c18fcf9e681.jpeg',
+	  '5e36c7c0-d705-4c9b-8443-2b5ce73d539b.jpeg'
     ];
 
     let current = 0;
@@ -158,7 +163,7 @@
     }
 
     
-    setInterval(fadeBackground, 5000);
+    setInterval(fadeBackground, 7500);
   </script>
 
 </body>
