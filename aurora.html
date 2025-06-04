@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Couple Album</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --light-red: #f8d7da;
+      --dark-red: #721c24;
+      --accent: #c94f7c;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: var(--light-red);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      background-color: var(--dark-red);
+      color: white;
+      padding: 1.5rem 0;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    header h1 {
+      font-family: 'Pacifico', cursive;
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    footer {
+      background-color: var(--dark-red);
+      color: white;
+      padding: 1rem 0;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .album-container {
+      margin: 2rem auto;
+      max-width: 600px;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease-in;
+    }
+
+    .slideshow {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      max-width: 100%;
+      border-radius: 10px;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .active {
+      display: block;
+      opacity: 1;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .buttons {
+      margin-top: 1rem;
+    }
+
+    button {
+      background-color: var(--accent);
+      border: none;
+      color: white;
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #a63d65;
+    }
+
+    .album-title {
+      margin-top: 2rem;
+      font-size: 1.8rem;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Love Album</h1>
+  </header>
+
+  <h3>Hello! Welcome to our album! I call this the Frenzied Album!</h3>
+  <p>So why Frenzied you might say? Because what I feel when I saw your eyes back then. I didnt know what to do because I didnt know that 4 eyes</p>
+  <p>are looking at me. ("Wink wink. :3") I wanted to express my gratitude that even though Im your so called son. I feel loved and felt the warmth of your warmest embrace</p>
+  <p>I made this album because I want to show my appreciation and gratitude to someone that I still pinpoint who that might be ("That means you") </p>
+  <p>Now that It's compiled here. Its permanent now (Unless this website goes down ¯\_(ツ)_/¯). I hope our bond is permanent too and lets create more memories!</p>
+  <p>(I hope I don't create more websites... jk :3) To all of my thoughts and the things I may say or not say. To our ups and downs. Lets "Hasa" each other.</p>
+  <h2>= Padayon! =</h2>
+  
+  <div class="album-container" id="album1">
+    <div class="album-title">Our Pictures</div>
+    <br>
+    <div class="slideshow">
+      <img src="meNu/(1).jpeg" class="slide active" />
+      <img src="meNu/(2).jpeg" class="slide" />
+      <img src="meNu/(3).jpeg" class="slide" />
+      <img src="meNu/(4).jpeg" class="slide" />
+      <img src="meNu/(5).jpeg" class="slide" />
+      <img src="meNu/(6).jpeg" class="slide" />
+      <img src="meNu/(7).jpeg" class="slide" />
+      <img src="meNu/(8).jpeg" class="slide" />
+      <img src="meNu/(9).jpeg" class="slide" />
+      <img src="meNu/(10).jpeg" class="slide" />
+      <img src="meNu/(11).jpeg" class="slide" />
+      <img src="meNu/(12).jpeg" class="slide" />
+      <img src="meNu/(13).jpeg" class="slide" />
+      <img src="meNu/(14).jpeg" class="slide" />
+      <img src="meNu/(15).jpeg" class="slide" />
+      <img src="meNu/(16).jpeg" class="slide" />
+      <img src="meNu/(17).jpeg" class="slide" />
+      <img src="meNu/(18).jpeg" class="slide" />
+      <img src="meNu/(19).jpeg" class="slide" />
+      <img src="meNu/(20).jpeg" class="slide" />
+      <img src="meNu/(21).jpeg" class="slide" />
+      <img src="meNu/(22).jpeg" class="slide" />
+      <img src="meNu/(23).jpeg" class="slide" />
+      <img src="meNu/(24).jpeg" class="slide" />
+      <img src="meNu/(25).jpeg" class="slide" />
+      <img src="meNu/(26).jpeg" class="slide" />
+      <img src="meNu/(27).jpeg" class="slide" />
+      <img src="meNu/(28).jpeg" class="slide" />
+      <img src="meNu/(29).jpeg" class="slide" />
+      <img src="meNu/(30).jpeg" class="slide" />
+      <img src="meNu/(31).jpeg" class="slide" />
+      <img src="meNu/(32).jpeg" class="slide" />
+      <img src="meNu/(33).jpeg" class="slide" />
+      <img src="meNu/(34).jpeg" class="slide" />
+      <img src="meNu/(35).jpeg" class="slide" />
+      <img src="meNu/(36).jpeg" class="slide" />
+      <img src="meNu/(37).jpeg" class="slide" />
+      <img src="meNu/(38).jpeg" class="slide" />
+    </div>
+    <div class="buttons">
+      <button onclick="changeSlide('album1', -1)">Previous</button>
+      <button onclick="changeSlide('album1', 1)">Next</button>
+    </div>
+  </div>
+
+  <div class="album-container" id="album2">
+    <div class="album-title">You!</div>
+    <br>
+    <div class="slideshow">
+      <img src="u/(1).jpeg" class="slide active" />
+      <img src="u/(2).jpeg" class="slide" />
+      <img src="u/(3).jpeg" class="slide" />
+      <img src="u/(4).jpeg" class="slide" />
+      <img src="u/(5).jpeg" class="slide" />
+      <img src="u/(6).jpeg" class="slide" />
+      <img src="u/(7).jpeg" class="slide" />
+      <img src="u/(8).jpeg" class="slide" />
+      <img src="u/(9).jpeg" class="slide" />
+      <img src="u/(10).jpeg" class="slide" />
+      <img src="u/(11).jpeg" class="slide" />
+      <img src="u/(12).jpeg" class="slide" />
+      <img src="u/(13).jpeg" class="slide" />
+      <img src="u/(14).jpeg" class="slide" />
+      <img src="u/(15).jpeg" class="slide" />
+      <img src="u/(16).jpeg" class="slide" />
+      <img src="u/(17).jpeg" class="slide" />
+      <img src="u/(18).jpeg" class="slide" />
+      <img src="u/(19).jpeg" class="slide" />
+      <img src="u/(20).jpeg" class="slide" />
+      <img src="u/(21).jpeg" class="slide" />
+      <img src="u/(22).jpeg" class="slide" />
+      <img src="u/(23).jpeg" class="slide" />
+      <img src="u/(24).jpeg" class="slide" />
+      <img src="u/(25).jpeg" class="slide" />
+      <img src="u/(26).jpeg" class="slide" />
+      <img src="u/(27).jpeg" class="slide" />
+    </div>
+    <div class="buttons">
+      <button onclick="changeSlide('album2', -1)">Previous</button>
+      <button onclick="changeSlide('album2', 1)">Next</button>
+    </div>
+  </div>
+
+  <div class="album-container" id="album3">
+    <div class="album-title">Aurora Fest and Random Moments</div>
+    <br>
+    <div class="slideshow">
+      <img src="Random/(1).jpeg" class="slide active" />
+      <img src="Random/(2).jpeg" class="slide" />
+      <img src="Random/(3).jpeg" class="slide" />
+      <img src="Random/(4).jpeg" class="slide" />
+      <img src="Random/(5).jpeg" class="slide" />
+      <img src="Random/(6).jpeg" class="slide" />
+      <img src="Random/(7).jpeg" class="slide" />
+      <img src="Random/(8).jpeg" class="slide" />
+      <img src="Random/(9).jpeg" class="slide" />
+      <img src="Random/(10).jpeg" class="slide" />
+      <img src="Random/(11).jpeg" class="slide" />
+      <img src="Random/(12).jpeg" class="slide" />
+      <img src="Random/(13).jpeg" class="slide" />
+      <img src="Random/(14).jpeg" class="slide" />
+      <img src="Random/(15).jpeg" class="slide" />
+      <img src="Random/(16).jpeg" class="slide" />
+      <img src="Random/(17).jpeg" class="slide" />
+      <img src="Random/(18).jpeg" class="slide" />
+      <img src="Random/(19).jpeg" class="slide" />
+      <img src="Random/(20).jpeg" class="slide" />
+      <img src="Random/(21).jpeg" class="slide" />
+      <img src="Random/(22).jpeg" class="slide" />
+      <img src="Random/(23).jpeg" class="slide" />
+      <img src="Random/(24).jpeg" class="slide" />
+      <img src="Random/(25).jpeg" class="slide" />
+      <img src="Random/(26).jpeg" class="slide" />
+      <img src="Random/(27).jpeg" class="slide" />
+      <img src="Random/(28).jpeg" class="slide" />
+      <img src="Random/(29).jpeg" class="slide" />
+      <img src="Random/(30).jpeg" class="slide" />
+      <img src="Random/(31).jpeg" class="slide" />
+      <img src="Random/(32).jpeg" class="slide" />
+      <img src="Random/(33).jpeg" class="slide" />
+      <img src="Random/(34).jpeg" class="slide" />
+      <img src="Random/(35).jpeg" class="slide" />
+      <img src="Random/(36).jpeg" class="slide" />
+      <img src="Random/(37).jpeg" class="slide" />
+      <img src="Random/(38).jpeg" class="slide" />
+      <img src="Random/(39).jpeg" class="slide" />
+      <img src="Random/(40).jpeg" class="slide" />
+      <img src="Random/(41).jpeg" class="slide" />
+      <img src="Random/(42).jpeg" class="slide" />
+      <img src="Random/(43).jpeg" class="slide" />
+      <img src="Random/(44).jpeg" class="slide" />
+      <img src="Random/(45).jpeg" class="slide" />
+      <img src="Random/(46).jpeg" class="slide" />
+      <img src="Random/(47).jpeg" class="slide" />
+      <img src="Random/(48).jpeg" class="slide" />
+      <img src="Random/(49).jpeg" class="slide" />
+      <img src="Random/(50).jpeg" class="slide" />
+      <img src="Random/(51).jpeg" class="slide" />
+      <img src="Random/(52).jpeg" class="slide" />
+      <img src="Random/(53).jpeg" class="slide" />
+      <img src="Random/(54).jpeg" class="slide" />
+      <img src="Random/(55).jpeg" class="slide" />
+      <img src="Random/(56).jpeg" class="slide" />
+      <img src="Random/(57).jpeg" class="slide" />
+      <img src="Random/(58).jpeg" class="slide" />
+      <img src="Random/(59).jpeg" class="slide" />
+      <img src="Random/(60).jpeg" class="slide" />
+      <img src="Random/(61).jpeg" class="slide" />
+      <img src="Random/(62).jpeg" class="slide" />
+      <img src="Random/(63).jpeg" class="slide" />
+      <img src="Random/(64).jpeg" class="slide" />
+      <img src="Random/(65).jpeg" class="slide" />
+      <img src="Random/(66).jpeg" class="slide" />
+      <img src="Random/(67).jpeg" class="slide" />
+      <img src="Random/(68).jpeg" class="slide" />
+      <img src="Random/(69).jpeg" class="slide" />
+      <img src="Random/(70).jpeg" class="slide" />
+      <img src="Random/(71).jpeg" class="slide" />
+      
+      
+    </div>
+    <div class="buttons">
+      <button onclick="changeSlide('album3', -1)">Previous</button>
+      <button onclick="changeSlide('album3', 1)">Next</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Our Memories. Made with Mommy's Tender loving care.</p>
+    <p id="day-counter"></p>
+  </footer>
+
+  <script>
+    const currentSlides = {
+      album1: 0,
+      album2: 0,
+      album3: 0
+    };
+
+    function changeSlide(albumId, direction) {
+      const album = document.getElementById(albumId);
+      const slides = album.querySelectorAll(".slide");
+      currentSlides[albumId] = (currentSlides[albumId] + direction + slides.length) % slides.length;
+      slides.forEach((slide, index) => {
+        slide.classList.toggle("active", index === currentSlides[albumId]);
+      });
+    }
+
+    // Touch support
+    document.querySelectorAll('.album-container').forEach(container => {
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      container.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+      });
+
+      container.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        const albumId = container.id;
+        if (touchEndX < touchStartX - 30) {
+          changeSlide(albumId, 1); // Swipe left
+        } else if (touchEndX > touchStartX + 30) {
+          changeSlide(albumId, -1); // Swipe right
+        }
+      });
+    });
+
+    // Day Counter
+    function updateDayCounter() {
+      const startDate = new Date('2025-05-03');
+      const today = new Date();
+      const diffTime = today - startDate;
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+      document.getElementById('day-counter').textContent = `${diffDays} days since May 3, 2025 ❤️`;
+    }
+
+    updateDayCounter();
+  </script>
+</body>
+</html>
