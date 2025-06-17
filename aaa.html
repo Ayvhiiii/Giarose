@@ -1,37 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Click Me More!</title>
+  <title>Click Tracker</title>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
       margin-top: 50px;
-      background: #dee3af;
+	  background: #dee3af;
     }
-    input[type="text"] {
+    input {
       padding: 10px;
       font-size: 16px;
-      width: 250px;
     }
     button {
-      margin-top: 20px;
       padding: 20px 40px;
       font-size: 24px;
+      margin-top: 20px;
       background-color: #961212;
       color: white;
       border: none;
       border-radius: 8px;
-      cursor: pointer;
     }
-    button:hover {
+	
+	button:hover {
       background-color: #4a0a0a;
     }
-    .result {
+    .record {
       margin-top: 30px;
-      font-size: 18px;
+      font-size: 20px;
       color: #333;
     }
   </style>
@@ -41,28 +40,56 @@
   <h1>Update me!</h1>
   <p>Its like the bracelet on tiktok but on a website! YAY!</p>
   <p>Enter your name:</p>
-  <input type="text" id="nameInput" placeholder="Your name here" />
+  <p>(Add a little message after the name if you want :>)</p>
+  <input type="text" id="nameInput" placeholder="Enter your name" />
   <br>
   <button onclick="recordClick()">Click Me!</button>
 
-  <div class="result" id="resultDisplay">
-    No clicks recorded yet.
-  </div>
+  <div class="record" id="lastRecord">Loading last record...</div>
 
   <script>
+    // ✅ Replace this config with YOUR Firebase project settings
+    const firebaseConfig = {
+  apiKey: "AIzaSyCWEWAIDr2Kjn6FSfzZVYpCccZ-yH17MLk",
+  authDomain: "clickgiarose.firebaseapp.com",
+  projectId: "clickgiarose",
+  storageBucket: "clickgiarose.firebasestorage.app",
+  messagingSenderId: "32256022653",
+  appId: "1:32256022653:web:ab4c41a261a1b3c2b8b914",
+  measurementId: "G-9VT2X6V4X1"
+};
+
+    firebase.initializeApp(firebaseConfig);
+    const database = firebase.database();
+    const lastRecordRef = database.ref('lastClick');
+
     function recordClick() {
       const name = document.getElementById('nameInput').value.trim();
-      if (name === "") {
-        alert("Please enter your name before clicking.");
+      if (!name) {
+        alert("Please enter your name!");
         return;
       }
 
-      const now = new Date();
-      const dateTime = now.toLocaleString();
-      const message = `Last clicked by: <strong>${name}</strong><br>On: <strong>${dateTime}</strong>`;
+      const now = new Date().toLocaleString();
 
-      document.getElementById('resultDisplay').innerHTML = message;
+      const clickData = {
+        name: name,
+        time: now
+      };
+
+      lastRecordRef.set(clickData);
     }
+
+    // Show latest click live to all users
+    lastRecordRef.on('value', (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        document.getElementById('lastRecord').innerHTML = 
+          `Last clicked by: <strong>${data.name}</strong><br>At: <strong>${data.time}</strong>`;
+      } else {
+        document.getElementById('lastRecord').innerText = "No record yet.";
+      }
+    });
   </script>
 
 </body>
